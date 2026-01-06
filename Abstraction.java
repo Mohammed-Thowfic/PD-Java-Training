@@ -1,19 +1,21 @@
+abstract class ATM {
+    abstract void withdraw();
 
-    abstract class AbsEmployee{
-        abstract void disp();
-        void salary(){
-            System.out.println("Salary");
-        }
+    void balance() {
+        System.out.println("My Balance is 1000");
     }
-    class Department extends AbsEmployee{
-        public void disp(){
-            System.out.println("Department");
-        }
+}
+
+class MyATM extends ATM {
+    public void withdraw() {
+        System.out.println("Money is Withdraw successfully");
     }
-    public class Abstraction {
-        public static void main(String[] args) {
-            Department e=new Department();
-            e.disp();
-            e.salary();
-        }
+}
+
+public class Abstraction {
+    public static void main(String[] args) {
+        ATM e = new MyATM();
+        e.withdraw();
+        e.balance();
     }
+}
