@@ -1,34 +1,27 @@
-class Employee{
-    private int empid;
-    private String name;
-    private double salary;
-    public int getEmpid(){
-        return empid;
+class BankAccount {
+    private double balance;
+
+    public void deposit(double amount) {
+        balance += amount;
     }
-    public void setEmpid(int empid){
-        this.empid=empid;
+
+    public void withdrawn(double amount) {
+        if (amount <= balance) {
+            balance -= amount;
+        }
     }
-    public String getName(){
-        return name;
-    }
-    public void setName(String name){
-        this.name=name;
-    }
-    public double getSalary(){
-        return salary;
-    }
-    public void setSalary(double salary){
-        this.salary=salary;
+
+    public double getBalance() {
+        return balance;
     }
 }
+
 public class Encapsulation {
     public static void main(String[] args) {
-        Employee emp=new Employee();
-        emp.setEmpid(064);
-        emp.setName("Thowfic");
-        emp.setSalary(30000);
-        System.out.println("Empid:"+emp.getEmpid());
-        System.out.println("Name:"+emp.getName());
-        System.out.println("Salary:"+emp.getSalary());
+        BankAccount acc = new BankAccount();
+        acc.deposit(5000);
+        acc.withdrawn(3000);
+        System.out.println(acc.getBalance());
+
     }
 }
